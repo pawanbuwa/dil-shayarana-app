@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         swipeRefresh = findViewById(R.id.swipeRefresh)
-        
+
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         swipeRefresh.setOnRefreshListener {
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         swipeRefresh.isRefreshing = true
         thread {
             try {
-                // max-results=50 se sari posts full aayengi
                 val url = "https://www.dilshayarana.com/feeds/posts/default?alt=json&max-results=50"
                 val jsonStr = URL(url).readText()
                 val jsonObject = JSONObject(jsonStr)
@@ -49,15 +48,7 @@ class MainActivity : AppCompatActivity() {
                         val title = item.getJSONObject("title").getString("\$t")
                         val content = item.getJSONObject("content").getString("\$t")
 
-                        // First Image extract from content
-                        var imageUrl: String? = null
-                        if (content.contains("<img") && content.contains("src=\"")) {
-                            val srcStart = content.indexOf("src=\"") + 5
-                            val srcEnd = content.indexOf("\"", srcStart)
-                            if (srcStart > 4 && srcEnd > srcStart) {
-                                imageUrl = content.substring(srcStart, srcEnd)
-                            }
-                        }
+                        val imageUrl = BloggerUtils.extractImageUrl(content) ?: ""
 
                         postList.add(PostItem(title, content, imageUrl))
                     }
