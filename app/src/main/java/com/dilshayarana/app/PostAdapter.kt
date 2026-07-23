@@ -1,7 +1,5 @@
 package com.dilshayarana.app
 
-package com.dilshayarana.app
-
 import android.content.Intent
 import android.text.Html
 import android.view.LayoutInflater
