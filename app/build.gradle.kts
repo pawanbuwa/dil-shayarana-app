@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.browser:browser:1.8.0")
 testImplementation(libs.junit)
