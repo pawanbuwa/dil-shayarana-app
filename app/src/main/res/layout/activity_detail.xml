@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F9F9F9"
     android:padding="16dp">
 
     <LinearLayout
@@ -9,30 +10,71 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Banner Image -->
         <ImageView
             android:id="@+id/imgDetail"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="230dp"
             android:scaleType="centerCrop"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
 
+        <!-- Action Buttons: Download, Copy, Share -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📥 इमेज सेव"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/btnCopy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📋 कॉपी"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📲 शेयर"
+                android:backgroundTint="#25D366"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <!-- Shayari Title -->
         <TextView
             android:id="@+id/tvDetailTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginTop="12dp"/>
+            android:textColor="#111111"
+            android:layout_marginBottom="12dp"/>
 
+        <!-- Clean Shayari Content -->
         <TextView
             android:id="@+id/tvDetailContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:lineSpacingExtra="4dp"
-            android:textColor="#222222"
-            android:layout_marginTop="16dp"/>
+            android:textSize="17sp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="#333333"/>
 
     </LinearLayout>
 </ScrollView>
