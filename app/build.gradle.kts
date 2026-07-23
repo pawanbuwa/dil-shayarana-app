@@ -39,7 +39,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.browser:browser:1.8.0")
+testImplementation(libs.junit)
+androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }
